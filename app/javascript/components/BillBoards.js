@@ -13,6 +13,8 @@ const BillBoards = ({ bill_boards }) => {
           <h3>{b.title} </h3>
           {b.body}
           <br />
+          <a href="/bill_boards/new">New BillBoard</a>
+          <br />
           <br />
           <a href={`${url}` + b.id}>Show BillBoard</a>
           <br />
@@ -21,6 +23,7 @@ const BillBoards = ({ bill_boards }) => {
           <br />
           <br />
           <a href={`${url}` + b.id} data-method="delete">Delete BillBoard</a>
+          <h2>{ b.length <= 0 ? "No BillBoards" : "" }</h2>
         </div>
       ))
     }

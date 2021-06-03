@@ -7,7 +7,7 @@ class ArtistsController < ApplicationController
   #     @parent = Parent.find(params[:id])
   #   end
   before_action :set_bill_board
-  before_action :set_artist, only [:show, :edit, :update, destroy]
+  before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
   def index
     @artists = @bill_board.artists
