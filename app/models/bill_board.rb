@@ -1,0 +1,2 @@
+class BillBoard < ApplicationRecord
+end
