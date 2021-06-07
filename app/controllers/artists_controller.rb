@@ -52,7 +52,7 @@ class ArtistsController < ApplicationController
   
   private
     def set_bill_board
-      @bill_board = BillBoard.find(params[:bill_board_id])
+      @bill_board = BillBoard.find(params[:bill_boards])
     end
 
     def set_artist
