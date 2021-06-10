@@ -15,4 +15,4 @@ const Artist = ({ artist, bill_board }) => {
   )
 }
 
-export default Artist;
+export default Artist; 

@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
-  before_action :set_artist
-  before_action :set_song, only [:show, :edit, :update, :destroy]
+  before_action :set_artist 
+  before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
     @songs = @artist.songs
@@ -19,7 +19,7 @@ class SongsController < ApplicationController
   def create
     @song = @artist.songs.new(song_params)
     if @song.save
-      redirect_to root_path
+      redirect_to [@artist, @song]
     else
       render component: 'SongNew', props: { song: @song, artist: @artist }
     end
@@ -31,7 +31,7 @@ class SongsController < ApplicationController
 
   def update
     if @song.update(song_params)
-      redirect_to root_path
+      redirect_to artist_songs_path(@artist)
     else
       render component: 'SongEdit', props: { song: @song, artist: @artist}
     end
@@ -39,7 +39,7 @@ class SongsController < ApplicationController
 
   def destroy
     @song.destroy
-    redirect_to root_path
+    redirect_to artist_songs_path(@artist)
   end
 
   private
