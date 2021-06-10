@@ -1,7 +1,7 @@
 import React from 'react';
 import Artists from './Artists';
 
-const Songs = ({ songs, artist, bill_board }) => {
+const Songs = ({ songs, artist }) => {
   const { name, about, age, id } = artist
   return(
     <>
@@ -16,12 +16,14 @@ const Songs = ({ songs, artist, bill_board }) => {
             <h3><a href={`/artists/${artist.id}/songs/${song.id}`}>{song.title}</a></h3>
             <p>{song.body}</p>
             <br />
-            <a href={`/artists/${artist.id}/songs/${song.id}/edit}`}>Edit Song</a>
+            <a href={`/artists/${artist.id}/songs/${song.id}/edit`}>Edit Song</a>
             <br />
             <a href={`/artists/${artist.id}/songs/${song.id}`} data-method="delete">Delete Song</a>
           </div>
         ))
       }
+      <br />
+      <a href={`/bill_boards`}>Back(DOESN'T WORK, YET)</a>
     </>
   );
 }

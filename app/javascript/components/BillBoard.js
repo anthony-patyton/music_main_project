@@ -10,7 +10,9 @@ const BillBoard = ({ bill_board }) => {
         Created: {created_at}, id: {id}
       </p>
       <h2>Body: {body}</h2>
-      <a href={`/bill_boards/${id}/artists`}>Artists</a>
+      <h1><a href={`/bill_boards/${id}/artists`}>Artists</a></h1>
+      <br />
+      <a href={`/`}>Back</a>
     </>
   );
 }

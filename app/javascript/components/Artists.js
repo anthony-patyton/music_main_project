@@ -4,7 +4,7 @@ const Artists = ({ artists, bill_board }) => {
   const { title, body, id } = bill_board
   return(
     <>
-      <h1>Artits Page from {title} BillBoard</h1>
+      <h1>Artits Page from {title}</h1>
       <p><a href={`/bill_boards/${id}`}>Back to {title}</a></p>
       <br />
       <a href={`/bill_boards/${id}/artists/new`}>New Artist</a>

@@ -14,19 +14,17 @@ const BillBoardEdit = ({ bill_board }) => {
         <input
         placeholder   = "title"
         type          = "text"
-        defaultTitle  = {defaultTitle}
+        value         = {defaultTitle}
         name          = "BillBoard[title]"
         />
-        <button type="submit">Update</button>
         <br />
-        {/* <p>Body:</p>
-        <input type="hidden" name="_method" value="patch" />
-        <textarea
+        <p>Body:</p>
+        <textarea 
         placeholder   = "body"
-        defaultBody   = {defaultBody}
+        value         = {defaultBody}
         name          = "BillBoard[body]"
         />
-        <button type="submit">Update</button> */}
+        <button type="submit">Update</button>
       </form>
     </>
   );

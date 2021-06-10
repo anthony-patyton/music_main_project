@@ -1,13 +1,14 @@
 import React from 'react';
 
 const ArtistEdit = ({ artist, bill_board }) => {
-  const { id } = artist;
-  const { name, about, age, errors } = artist;
+  // const { bill_board_id } = bill_board
+  const { name, about, age, errors, id } = artist;
   return(
     <>
-      <h1>Edit Artist: {artist.name}</h1>
       { errors && errors }
       <form action={`/bill_boards/${bill_board.id}/artists/${id}`} method="post">
+        <fieldset>
+        <legend>Edit Artist: {artist.name}</legend>
         <input type="hidden" name="_method" value="patch" />
         <p>Name</p>
         <input
@@ -15,7 +16,6 @@ const ArtistEdit = ({ artist, bill_board }) => {
         name         = "artist[name]"
         type         = "text"
         />
-        <button type="submit">Update</button>
         <br />
         <p>Age</p>
         <input
@@ -23,7 +23,6 @@ const ArtistEdit = ({ artist, bill_board }) => {
         name         = "artist[age]"
         type         = "number"
         />
-        <button type="submit">Update</button>
         <br />
         <p>About</p>
         <textarea
@@ -31,7 +30,9 @@ const ArtistEdit = ({ artist, bill_board }) => {
         name         = "artist[about]"
         type         = "text"
         />
+        <br />
         <button type="submit">Update</button>
+        </fieldset>
       </form>
     </>
   )

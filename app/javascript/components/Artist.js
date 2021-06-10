@@ -7,6 +7,7 @@ const Artist = ({ artist, bill_board }) => {
       <div className="artist-card">
         <h1>Artist: {name}</h1>
         <h3><a href={`/bill_boards/${bill_board.id}/artists`}>BillBoard: {bill_board.title}</a></h3>
+        <p>I'm {age} year's old</p>
         <p>{about}</p>
         <br />
         <a href={`/artists/${artist.id}/songs`}>Show Songs</a>

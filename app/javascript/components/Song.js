@@ -10,6 +10,8 @@ const Song = ({ song, artist }) => {
         <p>{body}</p>
         <br />
       </div>
+      <br />
+      <a href={`/artists/${artist.id}/songs`}>Back</a>
     </>
   );
 }

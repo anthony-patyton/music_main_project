@@ -9,12 +9,6 @@ const Navbar = () => (
       <li>
         <a href="/bill_boards/new">New BillBoard</a>
       </li>
-      <li>
-        <a href="/artists">Artists</a>
-      </li>
-      <li>
-        <a href="/artists/new">New Artist</a>
-      </li>
     </ul>
   </nav>
 )

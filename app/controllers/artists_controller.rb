@@ -38,7 +38,7 @@ class ArtistsController < ApplicationController
 
   def update
     if @artist.update(artist_params)
-      redirect_to artists_path
+      redirect_to bill_board_artists_path
     else
       render component: 'ArtistEdit', props: { artist: @artist, bill_board: @bill_board}
     end

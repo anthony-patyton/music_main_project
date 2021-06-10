@@ -1,24 +1,28 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CRUD ACTIONS FOR BILLBOARDS
+*  -Create
+*  -Read
+*  -Update
+*  -Destroy
+LINKS FOR BILLBOARDS
+*
 
-Things you may want to cover:
+CRUD ACTIONS FOR ARTISTS
+*  -Create
+*  -Read
+*  -Update
+*  -Destroy
+LINKS FOR ARTISTS
+*
 
-* Ruby version
 
-* System dependencies
+CRUD ACTIONS FOR SONGS
+*  -Create
+*  -Read
+  -Update
+*  -destroy
+Links to move around
+*
+-except for back
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+STYLES
