@@ -1,6 +1,7 @@
 5.times do
   billboard = BillBoard.create(
-    title: Faker::Name.suffix
+    title: Faker::Name.suffix,
+    body: "I'm the body"
   )
   3.times do
     
@@ -10,14 +11,14 @@
       age: Faker::Number.between(from: 1, to: 50),
       about: Faker::ChuckNorris.fact
     )
-  end
     3.times do
-      
+    end
       Song.create(
         artist_id: @artist.id,
+        title: Faker::GreekPhilosophers.name,
         body: Faker::GreekPhilosophers.quote,
-        date_added: Faker::Date.between(from: '2001-01-01', to: Date.today),
-        audio: 'https://www.youtube.com/watch?v=EYKyhCkvsTI'
+        period: Faker::Date.between(from: '2001-01-01', to: Date.today),
+        # audio: 'https://www.youtube.com/watch?v=EYKyhCkvsTI'
       )
     end
 end

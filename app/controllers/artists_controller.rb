@@ -15,7 +15,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    render component: 'Artist', props: { artist: @artist, bill_board: @billboard }
+    render component: 'Artist', props: { artist: @artist, bill_board: @bill_board }
   end
 
   def new
@@ -26,8 +26,7 @@ class ArtistsController < ApplicationController
   def create
     @artist = @bill_board.artists.new(artist_params)
     if @artist.save
-      redirect_to root_path
-      # redirect_to bill_board_artists_path(params[:id])
+      redirect_to [@bill_board, @artist]
     else
       render component: 'ArtistNew', props: { artist: @artist, bill_board: @bill_board }
     end
@@ -39,7 +38,7 @@ class ArtistsController < ApplicationController
 
   def update
     if @artist.update(artist_params)
-      redirect_to root_path
+      redirect_to artists_path
     else
       render component: 'ArtistEdit', props: { artist: @artist, bill_board: @bill_board}
     end
@@ -47,12 +46,12 @@ class ArtistsController < ApplicationController
 
   def destroy
     @artist.destroy
-    redirect_to root_path
+    redirect_to bill_board_artrists_path(@bill_board)
   end
   
   private
     def set_bill_board
-      @bill_board = BillBoard.find(params[:bill_boards])
+      @bill_board = BillBoard.find(params[:bill_board_id])
     end
 
     def set_artist

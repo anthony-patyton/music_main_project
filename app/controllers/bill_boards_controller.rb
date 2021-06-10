@@ -1,6 +1,6 @@
 class BillBoardsController < ApplicationController
+  before_action :set_bill_board, only:[:show, :edit, :update]
   
-  before_action :set_bill_board, only: [:show, :edit, :update]
   def index
     @bill_boards = BillBoard.all
     render component: 'BillBoards', props: { bill_boards: @bill_boards }
@@ -12,15 +12,11 @@ class BillBoardsController < ApplicationController
 
   def new
     @bill_board = BillBoard.new
-    render component: 'BillBoardNew', props: { bill_board: @bill_board }
+    render component: 'BillBoardNew', props: { bill_board:  @bill_board }
   end
 
   def edit
-    if @bill_board.save
-      redirect_to root_path
-    else
-      render component: 'BillBoardEdit', props: { bill_board: @bill_board}
-    end
+    render component: 'BillBoardEdit', props: { bill_board: @bill_board}
   end
 
   def create
@@ -49,7 +45,7 @@ class BillBoardsController < ApplicationController
   # { bill_board: { title: 'ksjdflaj;s'}}
   # check data and protects from sql injection SELECT*FROMUSER's
     def bill_board_params
-      params.require(:bill_board).permit(:title, :body)
+      params.require(:BillBoard).permit(:title, :body)
     end
 
     def set_bill_board
