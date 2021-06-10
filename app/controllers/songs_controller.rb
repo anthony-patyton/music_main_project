@@ -19,7 +19,7 @@ class SongsController < ApplicationController
   def create
     @song = @artist.songs.new(song_params)
     if @song.save
-      redirect_to [@artist, @song]
+      redirect_to artist_songs_path
     else
       render component: 'SongNew', props: { song: @song, artist: @artist }
     end
